@@ -13,6 +13,7 @@ end
 
 Rails.application.routes.draw do
 
+  resources :feedbacks
   get 'pages/product'
   get 'pages/pricing'
   get 'pages/signin'

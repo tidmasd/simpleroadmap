@@ -4,6 +4,10 @@ class ProjectsController < ApplicationController
 		@projects = Project.all
 	end
 
+	# GET /project/1
+	  def show
+	  end
+
 	def new
 		@project = Project.new
 	end

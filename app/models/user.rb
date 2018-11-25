@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
          validates :name, presence: true
 
+         has_many :feedbacks, dependent: :destroy
+
          def subscribed?
          	stripe_subscription_id?
          end
