@@ -1,0 +1,25 @@
+<div class="col-md-6">
+		<h2>Welcome to SimpleRoadmap.com</h2>
+		<p>We're so glad you're here. Now tell us a bit about yourself :)</p>
+
+		<%= simple_form_for @account do |f| %>
+			<%= f.fields_for :owner do |o| %>
+				<%= o.input :name, label: false, placeholder: "Full Name" %>
+				<%= o.input :email, label: false, placeholder: "Email" %>
+				<%= o.input :password, label: false, placeholder: "Password" %>
+				<%= o.input :password_confirmation, label: false, placeholder: "Retype your password" %>
+			<% end %>
+
+
+		<h2>Choose your account URL</h2>
+		<p>This URL will take you directly to your account</p>
+			<%= f.input :subdomain do %>
+				<div class="input-group">
+					<%= f.input_field :subdomain, label: false, placeholder: "Subdomain", class: 'form-control' %>
+					<span class="input-group-addon">.simpleroadmap.com</span>
+				</div>
+			<% end %>
+			<%= f.button :submit, "Sign up", class: "btn-primary" %>
+		<% end %>
+</div>
+

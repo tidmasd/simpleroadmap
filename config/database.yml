@@ -1,0 +1,26 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: simpleroadmap_development
+  pool: 5
+  username: dantidmas
+  password: 
+  host: localhost
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: simpleroadmap_development
+  pool: 5
+  username: dantidmas
+  password: 
+  host: localhost
+
+productio :
+  adapter: postgresql
+  encoding: unicode
+  database: simpleroadmap_development
+  pool: 5
+  username: simpleroadmap
+  password: 
+  host: localhost
