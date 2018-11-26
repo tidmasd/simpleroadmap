@@ -14,6 +14,8 @@ gem 'devise_invitable', '~> 1.7.0'
 gem 'apartment'
 gem 'simple_form', '~> 4.1'
 gem 'stripe', '~> 3.13'
+gem 'rails_12factor', group: :production
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

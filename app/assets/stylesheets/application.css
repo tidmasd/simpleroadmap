@@ -22,9 +22,28 @@
 .navbar-default {
 	background: transparent !important;
 	box-shadow: none !important;
-	
+	display:inline;
+	clear:both;
 }
 
+.feedback_item {
+	margin-bottom: 40px;
+}
+
+.feedback_votes {
+	border: 1px solid #000;
+	border-radius:4px;
+	width:10%;
+	text-align: center;
+	display:inline;
+	clear:both;
+}
+
+.feedback_line_item {
+	width:90%;
+	text-align: left;
+	display: inline-block;
+}
 
 h2 {
 	font-size: 20px;
@@ -33,6 +52,10 @@ h2 {
  p {
  	font-size: 18px;
  }
+
+.btn {
+	color: #fff !important;
+}
 
 @import "bootstrap";
 @import "bootstrap-responsive";

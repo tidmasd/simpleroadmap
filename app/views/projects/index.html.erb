@@ -3,7 +3,9 @@
 	
 	<% @projects.each do |project| %>
 		<h3>
+			<%= link_to project_path(project), class: "icon-link" do %>
 			<%= project.name %>
+			<% end %>
 			<small><%= project.description %></small>
 			<div class="pull-right">
 				<%= link_to edit_project_path(project), class: "icon-link" do %>

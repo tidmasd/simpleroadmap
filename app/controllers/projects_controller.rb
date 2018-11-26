@@ -6,6 +6,8 @@ class ProjectsController < ApplicationController
 
 	# GET /project/1
 	  def show
+	  	@project = Project.find(params[:id])
+	  	@feedbacks = Feedback.where(project_id: @project.id)
 	  end
 
 	def new
@@ -35,6 +37,8 @@ class ProjectsController < ApplicationController
 		end
 	end
 
+	def roadmap
+	end
 
 	private
 

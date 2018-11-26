@@ -1,6 +1,7 @@
 class FeedbacksController < ApplicationController
+  before_action :set_feedback, only: [ :edit, :update, :destroy]
+  before_action :set_project
   before_action :authenticate_user!
-  before_action :set_feedback, only: [:show, :edit, :update, :destroy]
 
   # GET /feedbacks
   def index
@@ -24,9 +25,10 @@ class FeedbacksController < ApplicationController
   def create
     @feedback = Feedback.new(feedback_params)
     @feedback.user_id = current_user.id
+    @feedback.project_id = @project.id
 
     if @feedback.save
-      redirect_to @feedback, notice: 'Feedback was successfully created.'
+      redirect_to projects_path, notice: 'Feedback was successfully created.'
     else
       render :new
     end
@@ -48,9 +50,14 @@ class FeedbacksController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_feedback
       @feedback = Feedback.find(params[:id])
+    end
+
+    def set_project
+      @project = Project.find(params[:project_id])
     end
 
     # Only allow a trusted parameter "white list" through.

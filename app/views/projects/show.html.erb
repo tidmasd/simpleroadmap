@@ -1,1 +1,42 @@
-This is the project display page
+<p id="notice"><%= notice %></p>
+
+<!-- <p>
+  <strong>Title:</strong>
+  <%= @project.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p> -->
+
+<small>Home / <%= @project.name %> / Feedback</small>
+<h2>Feedback</h2>
+
+<%= link_to "+ Feedback", new_project_feedback_path(@project), class: "btn btn-primary btn-block" %>
+
+</br>
+
+<% @feedbacks.each do |feedback| %>
+  
+    <div class="feedback_item">
+    	<div class="feedback_votes">
+    		<span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+    			<a href="#" class="FeedbackItem__voteLink FeedbackItem__voted">
+    			</a>
+    		</span>
+    		<span class="FeedbackItem__count">1</span>
+    	</div>
+	  <div class="feedback_line_item">
+	  	<h4><%= feedback.title %></h4>
+	  	<div class="badge badge-secondary"><%= feedback.status %></div>
+	  	<div class="feedback-footer">Added by <%= "#{feedback.user.name.capitalize}" %> on <%= feedback.created_at.strftime("%-m/%-d/%-y") %></div>
+	  </div>
+	</div>
+
+<% end %>
+
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
